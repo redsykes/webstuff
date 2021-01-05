@@ -1,0 +1,238 @@
+/* This one is crucial */
+/* fixes the problem you had when the width percentages on the divs
+   adds up to 100%. The divs on a row would wrap because of whitespace 
+   or the borders not being included in the width percentage.
+   
+   may not be needed with flexbox
+*/   
+div {
+    box-sizing: border-box;
+}
+
+
+#container {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.5vw;
+	/* 'vw' stands for viewport width
+		it will allow us to control the size of the text based
+		on the viewport. make a guess as to the right number.
+	*/
+}
+
+.section {
+	width: 95%;
+	margin: auto;
+	/* 'auto' centers the section in the container */ 
+	/* border: 1px solid green */
+}
+
+#columns {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	/* border: 1px solid black; */
+}
+
+
+.col {
+	width: 50%;
+}
+
+.section-title {
+	height: 3.5em;
+	font-family: 'Shadows Into Light Two', sans-serif;
+	font-size: 2vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* border: 1px solid blue; */
+}
+
+.section-items {
+	font-family: 'Neucha', cursive;
+	font-size: 3vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	align: center;
+	padding: 0.5vw;
+	/* border: 1px solid red; */
+}
+
+.section-description {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 3vw;
+}
+
+.greenbkg {
+	background-color: #21b47b;
+	color: white;
+}
+
+.greenborder {
+	border: 0.5vw solid #21b47b;
+}
+
+.blueborder {
+	border: 0.5vw solid #33ccff;
+}
+
+.bluebkg {
+	background-color: #33ccff;
+}
+
+.darkbluebkg {
+	background-color: #218cb4;
+	color: white;
+}
+
+.darkblueborder {
+	border: 0.5vw solid #218cb4;	
+}
+
+.redborder {
+	border: 0.5vw solid #ff6666;
+}
+
+.redbkg {
+	background-color: #ff6666;
+}
+
+.darkredbkg {
+	background-color: #cc3333;
+	color: white;
+}
+
+.darkredborder {
+	border: 0.5vw solid #cc3333;
+}
+
+.orangebkg {
+	background-color: #df9c1c;
+	color: white;
+}
+
+.orangeborder {
+	border: 0.5vw solid #df9c1c;
+}
+
+.redsideborders {
+	border-right: 0.5vw solid #ff6666;
+	border-left: 0.5vw solid #ff6666;	
+}	
+
+.nobottomborder {
+	border-bottom: 0vw;
+	/* this allows us to use the standard border class for everything while */
+	/* giving us the option to cancel the top and bottom borders */
+}
+
+.notopborder {
+	border-top: 0vw;
+}
+
+dl {
+	flex: 1;
+	margin:1vw 1vw 1.5vw;
+	/* 3 values in margin shorthand are top, left & right, bottom
+	
+	/* each list item ('dl') is going to be on its own row */
+	/* you want each item to fill up the entire row so you can use the */
+	/* trick below to put the price all the way to the right */
+	/* using 'flex: 1' basically tells the item to fill up the entire row */
+	/* i think space-between in justify-content is required too */
+}
+
+
+dd, .indent-item{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size:3vw;
+	margin-left:2vw;
+}
+
+.item-price {
+	font-size: 2.8vw;
+	/* font-family: 'Open Sans Condensed', sans-serif; */
+	/* font-family: 'Shadows Into Light Two', sans-serif; */
+	font-weight: bold;
+	font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.bold {
+	font-weight: bold;
+}
+
+dt {
+	display: flex;
+	justify-content: space-between;
+	/* border: 1px solid purple; */
+}
+
+.item-name {
+	/* flex: 1; */
+	/* this allows the first item ('item-name') to take up all the space on the line */
+	/* forcing the price to appear at the far right */
+	/* working with space-between from justify-content */
+	/* margin-right: 1.5vw; */
+	
+	/* when you didn't have the dots, you used flex: 1 here to ensure item-name
+	/* would fill up all available space. forcing item-price to appear at the 
+	/* far right. but now that we have dots, dots gets the filler of flex: 1 */
+}
+
+
+
+.empty-item {
+	height: 0.5vw;
+	margin-right:8vw;
+	margin-left:8vw;
+	margin-bottom:1.5vw;
+	margin-top:1.5vw;
+	/* border-bottom: 0.2vw dashed black; */
+	/* border-bottom: 0.5vw solid #ff9999; */
+}
+
+.dots {
+	flex: 1;
+	margin-bottom: 0.8vw;
+	border-bottom: 0.5vw dotted black;
+	margin-right: 1.5vw;
+	margin-left: 1vw;
+	/* look up the notes on flex: 1 (flex-grow)  */
+	/* using margins to make the dots appear around the middle of the line */
+	/* and using margins on the item-name and item-price to keep the dots from crowding them */
+}
+
+#header {
+	height: 6em;
+	display: flex;
+	/* width: 95%; */
+	/* margin: auto; */
+	/* 'auto' centers the header in the container */ 
+	/* border: 1px solid red; */
+}
+
+#header-logo {
+	width: 25%;
+	height: 100%;
+	/* border: 1px solid blue; */
+	background-image: url("shadys-logo.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.header-text {
+	width: 25%;
+	height: 100%;
+	/* border: 1px solid green; */
+}
+
+.description {
+	text-align: right;
+}
